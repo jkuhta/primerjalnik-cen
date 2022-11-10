@@ -6,10 +6,10 @@ import java.util.List;
 @Entity(name = "kategorija")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "kategorija.getAll", query = "SELECT k FROM kategorija k"),
-                @NamedQuery(name = "kategorija.getMostPopular", query = "SELECT k.ime FROM kategorija k WHERE size(k.izdelki) = MAX(size(k.izdelki)) "),
-                @NamedQuery(name = "kategorija.updateName", query = "UPDATE kategorija k SET k.ime = :ime WHERE k.ime = :ime"),
-                @NamedQuery(name = "kategorija.deleteUndefined", query = "DELETE FROM kategorija k WHERE k.ime IS NULL ")
+                @NamedQuery(name = "Kategorija.getAll", query = "SELECT k FROM kategorija k"),
+                @NamedQuery(name = "Kategorija.getMostPopular", query = "SELECT k.ime FROM kategorija k WHERE size(k.izdelki) = MAX(size(k.izdelki)) "),
+                @NamedQuery(name = "Kategorija.updateName", query = "UPDATE kategorija k SET k.ime = :ime WHERE k.ime = :staro"),
+                @NamedQuery(name = "Kategorija.deleteUndefined", query = "DELETE FROM kategorija k WHERE k.ime IS NULL ")
         })
 public class Kategorija {
 
