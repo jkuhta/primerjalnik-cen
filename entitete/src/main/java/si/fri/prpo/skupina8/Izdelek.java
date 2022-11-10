@@ -29,23 +29,44 @@ public class Izdelek {
 
     // getter in setter metode
 
-    public Integer getId() {return id;}
 
-    public String getIme(){ return ime;}
+    public Integer getId() {
+        return id;
+    }
 
-    public String getOpis() {return opis;}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public Integer getCena() {return cena;}
+    public String getIme() {
+        return ime;
+    }
 
-    public Kategorija getKategorija() {return kategorija;}
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
 
-    public void setId(Integer id) {this.id = id;}
+    public String getOpis() {
+        return opis;
+    }
 
-    public void setIme(String ime) {this.ime = ime;}
+    public void setOpis(String opis) {
+        this.opis = opis;
+    }
 
-    public void setOpis(String opis) {this.opis = opis;}
+    public Integer getCena() {
+        return cena;
+    }
 
-    public void setCena(Integer cena) {this.cena = cena;}
+    public void setCena(Integer cena) {
+        this.cena = cena;
+    }
 
-    public void setKategorija(Kategorija kategorija) {this.kategorija = kategorija;}
+    public Kategorija getKategorija() {
+        return kategorija;
+    }
+
+    public void setKategorija(Kategorija kategorija) {
+        this.kategorija = kategorija;
+    }
 }
