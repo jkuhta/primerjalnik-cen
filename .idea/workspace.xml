@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15015b23-8fdc-48fe-b646-6e003dfa8497" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enitete/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enitete/src/main/java/si/fri/prpo/skupina8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/si/fri/prpo/skupina7/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/si/fri/prpo/skupina8/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="15015b23-8fdc-48fe-b646-6e003dfa8497" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +51,7 @@
       <updated>1667211859602</updated>
       <workItem from="1667211862060" duration="4201000" />
       <workItem from="1667216160665" duration="249000" />
+      <workItem from="1667216423797" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667212902730</created>
