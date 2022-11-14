@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "kategorija")
+@Table(name = "kategorija")
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Kategorija.getAll", query = "SELECT k FROM kategorija k"),

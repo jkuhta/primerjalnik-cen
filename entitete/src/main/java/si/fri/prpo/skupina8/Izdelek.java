@@ -3,6 +3,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "izdelek")
+@Table(name = "izdelek")
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Izdelek.getAll", query = "SELECT i FROM izdelek i"),
@@ -10,6 +11,10 @@ import java.util.List;
                 @NamedQuery(name = "Izdelek.updateCena", query = "UPDATE izdelek i SET i.cena = :cena WHERE i.ime = :ime"),
                 @NamedQuery(name = "Izdelek.deleteUndefined", query = "DELETE FROM izdelek i WHERE i.ime IS NULL ")
         })
+
+
+
+
 public class Izdelek {
 
     @Id

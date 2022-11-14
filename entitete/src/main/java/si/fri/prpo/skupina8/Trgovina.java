@@ -3,6 +3,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "trgovina")
+@Table(name = "trgovina")
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Trgovina.getAll", query = "SELECT t FROM trgovina t"),
