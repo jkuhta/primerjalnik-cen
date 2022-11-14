@@ -35,13 +35,13 @@ public class JPAServlet extends HttpServlet {
         resp.getWriter().println(ver);
         resp.getWriter().println(env);
 
-        //Optional<String> microserviceName = ConfigurationUtil.getInstance().get("kumuluzee.name");
-        //microserviceName.ifPresent(s -> writer.println("Izpis generiran v mikrostoritvi " + s + "\n"));
+        Optional<String> microserviceName = ConfigurationUtil.getInstance().get("kumuluzee.name");
+        microserviceName.ifPresent(s -> writer.println("Izpis generiran v mikrostoritvi " + s + "\n"));
 
 
-        //List<Izdelek> izdelki;
-       // izdelki = izdelkiZrno.getIzdelki();
-        //writer.println(izdelki);
+        List<Izdelek> izdelki;
+        izdelki = izdelkiZrno.getIzdelki();
+        writer.println(izdelki);
         //izdelki.stream().forEach(u->writer.append(u.toString()+ "\n"));
 
     }

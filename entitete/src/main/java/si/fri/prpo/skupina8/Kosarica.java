@@ -2,14 +2,14 @@ package si.fri.prpo.skupina8;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "kosarica")
+@Entity
 @Table(name = "kosarica")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "Kosarica.getAll", query = "SELECT k FROM kosarica k"),
-                @NamedQuery(name = "Kosarica.getCheapest", query = "SELECT k FROM kosarica k WHERE k.cena = MIN(k.cena)"),
-                @NamedQuery(name = "Kosarica.getMostExpensive", query = "SELECT k FROM kosarica k WHERE k.cena = MAX(k.cena)"),
-                @NamedQuery(name = "Kosarica.deleteEmpty", query = "DELETE FROM kosarica k WHERE k.cena = 0 ")
+                @NamedQuery(name = "Kosarica.getAll", query = "SELECT k FROM Kosarica k"),
+                //@NamedQuery(name = "Kosarica.getCheapest", query = "SELECT k FROM Kosarica k WHERE k.cena = MIN(k.cena)"),
+                //@NamedQuery(name = "Kosarica.getMostExpensive", query = "SELECT k FROM Kosarica k WHERE k.cena = MAX(k.cena)"),
+                //@NamedQuery(name = "Kosarica.deleteEmpty", query = "DELETE FROM Kosarica k WHERE k.cena = 0 ")
         })
 public class Kosarica {
     @Id

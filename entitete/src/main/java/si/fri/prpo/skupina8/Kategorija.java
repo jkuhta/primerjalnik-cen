@@ -3,20 +3,20 @@ package si.fri.prpo.skupina8;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "kategorija")
+@Entity
 @Table(name = "kategorija")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "Kategorija.getAll", query = "SELECT k FROM kategorija k"),
-                @NamedQuery(name = "Kategorija.getMostPopular", query = "SELECT k.ime FROM kategorija k WHERE size(k.izdelki) = MAX(size(k.izdelki)) "),
-                @NamedQuery(name = "Kategorija.updateName", query = "UPDATE kategorija k SET k.ime = :ime WHERE k.ime = :staro"),
-                @NamedQuery(name = "Kategorija.deleteUndefined", query = "DELETE FROM kategorija k WHERE k.ime IS NULL ")
+                @NamedQuery(name = "Kategorija.getAll", query = "SELECT k FROM Kategorija k"),
+                //@NamedQuery(name = "Kategorija.getMostPopular", query = "SELECT k.ime FROM Kategorija k WHERE size(k.izdelki) = MAX(size(k.izdelki)) "),
+                //@NamedQuery(name = "Kategorija.updateName", query = "UPDATE Kategorija k SET k.ime = :ime WHERE k.ime = :staro"),
+                //@NamedQuery(name = "Kategorija.deleteUndefined", query = "DELETE FROM Kategorija k WHERE k.ime IS NULL ")
         })
 public class Kategorija {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer kategorija_id;
 
     @Column(name = "kategorija_ime")
     private String ime;
@@ -32,11 +32,11 @@ public class Kategorija {
 
 
     public Integer getId() {
-        return id;
+        return kategorija_id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.kategorija_id = id;
     }
 
     public String getIme() {
