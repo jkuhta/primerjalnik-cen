@@ -7,9 +7,9 @@ import java.util.List;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Izdelek.getAll", query = "SELECT i FROM Izdelek i"),
-                //@NamedQuery(name = "Izdelek.getCheapest", query = "SELECT i FROM Izdelek i WHERE i.cena = MIN(i.cena)"),
-               // @NamedQuery(name = "Izdelek.updateCena", query = "UPDATE Izdelek i SET i.cena = :cena WHERE i.ime = :ime"),
-                //@NamedQuery(name = "Izdelek.deleteUndefined", query = "DELETE FROM Izdelek i WHERE i.ime IS NULL ")
+                @NamedQuery(name = "Izdelek.getCheaper", query = "SELECT i FROM Izdelek i WHERE i.cena < :cena"),
+                @NamedQuery(name = "Izdelek.updateCena", query = "UPDATE Izdelek i SET i.cena = :cena WHERE i.ime = :ime"),
+                @NamedQuery(name = "Izdelek.deleteUndefined", query = "DELETE FROM Izdelek i WHERE i.ime IS NULL ")
         })
 
 

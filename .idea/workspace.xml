@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15015b23-8fdc-48fe-b646-6e003dfa8497" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/entitete/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Kategorija.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Kategorija.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Kosarica.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Kosarica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Trgovina.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Trgovina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/IzdelkiZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/IzdelkiZrno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,29 +37,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/jankuhta/Documents/faks/3. letnik/PRPO/primerjalnik-cen/entitete/src/main/resources/META-INF",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jankuhta/Documents/faks/3. letnik/PRPO/primerjalnik-cen/entitete/src/main/resources/META-INF&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/entitete/src/main/resources/META-INF" />
@@ -97,6 +93,7 @@
       <workItem from="1667216423797" duration="224000" />
       <workItem from="1668071581926" duration="9587000" />
       <workItem from="1668438630712" duration="19471000" />
+      <workItem from="1668529409416" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667212902730</created>

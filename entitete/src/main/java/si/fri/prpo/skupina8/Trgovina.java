@@ -7,9 +7,9 @@ import java.util.List;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Trgovina.getAll", query = "SELECT t FROM Trgovina t"),
-                //@NamedQuery(name = "Trgovina.getByLokacija", query = "SELECT t FROM Trgovina t WHERE t.lokacija = :lokacija"),
-                //@NamedQuery(name = "Trgovina.updateIme", query = "UPDATE Trgovina t SET t.ime = :ime WHERE t.ime = :staro"),
-                //@NamedQuery(name = "Trgovina.deleteUndefined", query = "DELETE FROM Trgovina t WHERE t.ime IS NULL ")
+                @NamedQuery(name = "Trgovina.getByLokacija", query = "SELECT t FROM Trgovina t WHERE t.lokacija = :lokacija"),
+                @NamedQuery(name = "Trgovina.updateIme", query = "UPDATE Trgovina t SET t.ime = :ime WHERE t.ime = :staro"),
+                @NamedQuery(name = "Trgovina.deleteUndefined", query = "DELETE FROM Trgovina t WHERE t.ime IS NULL ")
         })
 public class Trgovina {
 

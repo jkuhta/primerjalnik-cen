@@ -8,9 +8,9 @@ import java.util.List;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Kategorija.getAll", query = "SELECT k FROM Kategorija k"),
-                //@NamedQuery(name = "Kategorija.getMostPopular", query = "SELECT k.ime FROM Kategorija k WHERE size(k.izdelki) = MAX(size(k.izdelki)) "),
-                //@NamedQuery(name = "Kategorija.updateName", query = "UPDATE Kategorija k SET k.ime = :ime WHERE k.ime = :staro"),
-                //@NamedQuery(name = "Kategorija.deleteUndefined", query = "DELETE FROM Kategorija k WHERE k.ime IS NULL ")
+                @NamedQuery(name = "Kategorija.getByName", query = "SELECT k FROM Kategorija k WHERE k.ime = :ime"),
+                @NamedQuery(name = "Kategorija.updateName", query = "UPDATE Kategorija k SET k.ime = :ime WHERE k.ime = :staro"),
+                @NamedQuery(name = "Kategorija.deleteUndefined", query = "DELETE FROM Kategorija k WHERE k.ime IS NULL ")
         })
 public class Kategorija {
 

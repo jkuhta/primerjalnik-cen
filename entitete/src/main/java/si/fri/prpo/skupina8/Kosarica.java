@@ -7,9 +7,9 @@ import java.util.List;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "Kosarica.getAll", query = "SELECT k FROM Kosarica k"),
-                //@NamedQuery(name = "Kosarica.getCheapest", query = "SELECT k FROM Kosarica k WHERE k.cena = MIN(k.cena)"),
-                //@NamedQuery(name = "Kosarica.getMostExpensive", query = "SELECT k FROM Kosarica k WHERE k.cena = MAX(k.cena)"),
-                //@NamedQuery(name = "Kosarica.deleteEmpty", query = "DELETE FROM Kosarica k WHERE k.cena = 0 ")
+                @NamedQuery(name = "Kosarica.getBetween", query = "SELECT k FROM Kosarica k WHERE k.cena BETWEEN 100 and 1000"),
+                @NamedQuery(name = "Kosarica.getMin", query = "SELECT k.id, MIN(k.cena) FROM Kosarica k GROUP BY k.id"),
+                @NamedQuery(name = "Kosarica.deleteEmpty", query = "DELETE FROM Kosarica k WHERE k.cena = 0 ")
         })
 public class Kosarica {
     @Id
