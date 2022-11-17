@@ -102,4 +102,22 @@ public class Izdelek {
     public void setKosarice(List<Kosarica> kosarice) {
         this.kosarice = kosarice;
     }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Ime: ");
+        sb.append(this.ime);
+        sb.append("\n Opis: ");
+        sb.append(this.opis);
+        sb.append("\n Cena: ");
+        sb.append(this.cena);
+        sb.append("\n Kategorija: ");
+        sb.append(this.kategorija.getIme());
+        sb.append("\n\n");
+
+        return sb.toString();
+    }
 }

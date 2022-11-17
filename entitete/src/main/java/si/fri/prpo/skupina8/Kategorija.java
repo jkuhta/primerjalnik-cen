@@ -62,4 +62,5 @@ public class Kategorija {
     public void setIzdelki(List<Izdelek> izdelki) {
         this.izdelki = izdelki;
     }
+
 }
