@@ -2,7 +2,7 @@ package si.fri.prpo.skupina8.Servlet;
 
 import com.kumuluz.ee.configuration.utils.ConfigurationUtil;
 import si.fri.prpo.skupina8.Izdelek;
-import si.fri.prpo.skupina8.IzdelkiZrno;
+import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
