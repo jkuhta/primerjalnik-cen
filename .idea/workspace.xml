@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekTrgovinaDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KategorijaDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaIzdelekDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaTrgovinaDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/IzdelkiZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/IzdelkiZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +57,11 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="si.fri.prpo.skupina8.Dtos" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,6 +76,7 @@
       <workItem from="1669228823454" duration="889000" />
       <workItem from="1669286928879" duration="2070000" />
       <workItem from="1669315120166" duration="4213000" />
+      <workItem from="1669402329779" duration="3283000" />
     </task>
     <servers />
   </component>

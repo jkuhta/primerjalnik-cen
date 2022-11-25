@@ -29,6 +29,9 @@ public class Izdelek {
     @Column(name = "izdelek_cena")
     private Integer cena;
 
+    @Column(name = "stevilo_nakupov")
+    private Integer stNakupov;
+
     @ManyToOne
     @JoinColumn(name = "kategorija_id")
     private Kategorija kategorija;
@@ -78,6 +81,15 @@ public class Izdelek {
     public void setCena(Integer cena) {
         this.cena = cena;
     }
+
+    public Integer getStNakupov() {
+        return stNakupov;
+    }
+
+    public void setStNakupov(Integer stNakupov) {
+        this.stNakupov = stNakupov;
+    }
+
 
     public Kategorija getKategorija() {
         return kategorija;
