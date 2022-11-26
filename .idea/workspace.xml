@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekTrgovinaDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KategorijaDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaIzdelekDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaTrgovinaDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekTrgovinaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekTrgovinaDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaIzdelekDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaIzdelekDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaTrgovinaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/KosaricaTrgovinaDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
