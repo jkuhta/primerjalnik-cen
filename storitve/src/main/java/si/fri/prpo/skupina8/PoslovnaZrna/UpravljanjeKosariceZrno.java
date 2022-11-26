@@ -10,17 +10,20 @@ import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 import si.fri.prpo.skupina8.Zrna.KosariceZrno;
 import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
+import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @ApplicationScoped
 public class UpravljanjeKosariceZrno {
-    private Logger log = Logger.getLogger(IzdelkiZrno.class.getName());
+    private Logger log = Logger.getLogger(UpravljanjeKosariceZrno.class.getName());
 
     @Inject
     private KosariceZrno kosariceZrno;
@@ -36,13 +39,13 @@ public class UpravljanjeKosariceZrno {
 
     @PostConstruct
     private void init() {
-        log.info("Inicializacija zrna " + IzdelkiZrno.class.getSimpleName());
+        log.info("Inicializacija zrna " + UpravljanjeKosariceZrno.class.getSimpleName());
         //inicializacija virov
     }
 
     @PreDestroy
     private void destroy() {
-        log.info("Deinicializacija zrna " + IzdelkiZrno.class.getSimpleName());
+        log.info("Deinicializacija zrna " + UpravljanjeKosariceZrno.class.getSimpleName());
         //zapiranje virov
     }
 
@@ -97,7 +100,14 @@ public class UpravljanjeKosariceZrno {
 
         for (Izdelek izdelek : kosarica.getIzdelki()) {
 
-            skupnaCena += ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
+            Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
+            if (cena == null) {
+                log.info("Izdelka iz kosarice ni v izbrani trgovini!");
+                return null;
+            }
+
+            skupnaCena += cena;
+
         }
         kosarica.setCena(skupnaCena);
         kosariceZrno.updateKosarica(kosarica.getId(),kosarica);

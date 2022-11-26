@@ -3,14 +3,17 @@ package si.fri.prpo.skupina8.Zrna;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 import si.fri.prpo.skupina8.Izdelek;
+import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
 
 
 @ApplicationScoped
@@ -20,7 +23,8 @@ public class IzdelkiZrno {
 
     @PostConstruct
     private void init() {
-        log.info("Inicializacija zrna " + IzdelkiZrno.class.getSimpleName());
+        UUID id = UUID.randomUUID();
+        log.info("Inicializacija zrna " + IzdelkiZrno.class.getSimpleName() + " UUID: " + id);
         //inicializacija virov
     }
 
@@ -61,7 +65,7 @@ public class IzdelkiZrno {
     public List<Izdelek> getPopular() {
 
         Query q = em.createNamedQuery("Izdelek.getPopular");
-        List<Izdelek> izdelki = (List<Izdelek>) (q.setMaxResults(10).getResultList());
+        List<Izdelek> izdelki = (List<Izdelek>) (q.setMaxResults(3).getResultList());
 
         return izdelki;
     }

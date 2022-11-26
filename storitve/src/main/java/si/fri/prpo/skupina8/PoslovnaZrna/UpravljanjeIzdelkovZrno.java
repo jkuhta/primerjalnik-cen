@@ -12,14 +12,16 @@ import si.fri.prpo.skupina8.Zrna.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.logging.Logger;
 
+@ApplicationScoped
 public class UpravljanjeIzdelkovZrno {
-    private Logger log = Logger.getLogger(IzdelkiZrno.class.getName());
+    private Logger log = Logger.getLogger(UpravljanjeIzdelkovZrno.class.getName());
 
     @Inject
     private KosariceZrno kosariceZrno;
@@ -41,13 +43,13 @@ public class UpravljanjeIzdelkovZrno {
 
     @PostConstruct
     private void init() {
-        log.info("Inicializacija zrna " + IzdelkiZrno.class.getSimpleName());
+        log.info("Inicializacija zrna " + UpravljanjeIzdelkovZrno.class.getSimpleName());
         //inicializacija virov
     }
 
     @PreDestroy
     private void destroy() {
-        log.info("Deinicializacija zrna " + IzdelkiZrno.class.getSimpleName());
+        log.info("Deinicializacija zrna " + UpravljanjeIzdelkovZrno.class.getSimpleName());
         //zapiranje virov
     }
 

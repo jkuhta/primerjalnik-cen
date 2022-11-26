@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
@@ -16,7 +17,7 @@ import si.fri.prpo.skupina8.CeneVTrgovinah;
 @ApplicationScoped
 public class CeneVTrgovinahZrno {
 
-    private Logger log = Logger.getLogger(IzdelkiZrno.class.getName());
+    private Logger log = Logger.getLogger(CeneVTrgovinahZrno.class.getName());
 
     @PostConstruct
     private void init() {
@@ -42,12 +43,15 @@ public class CeneVTrgovinahZrno {
 
     public Integer getCenaVTrgovini(int trgovinaId,int izdelekId) {
 
-        Query q = em.createNamedQuery("CeneVTrgovinah.getByIzdelekTrgovina");
-        q.setParameter("izdelek",izdelekId);
-        q.setParameter("trgovina",trgovinaId);
-        Integer cena = (Integer) q.getSingleResult();
+        try{
+            Query q = em.createNamedQuery("CeneVTrgovinah.getByIzdelekTrgovina");
+            q.setParameter("izdelek",izdelekId);
+            q.setParameter("trgovina",trgovinaId);
+            return (Integer) q.getSingleResult();
+        } catch(NoResultException e) {
+            return null;
+        }
 
-        return cena;
     }
 
 }
