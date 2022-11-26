@@ -7,6 +7,7 @@
         <class>si.fri.prpo.skupina8.Kategorija</class>
         <class>si.fri.prpo.skupina8.Kosarica</class>
         <class>si.fri.prpo.skupina8.Trgovina</class>
+        <class>si.fri.prpo.skupina8.CeneVTrgovinah</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

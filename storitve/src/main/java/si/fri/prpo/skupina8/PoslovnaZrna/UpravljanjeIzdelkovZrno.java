@@ -8,10 +8,7 @@ import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Trgovina;
-import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
-import si.fri.prpo.skupina8.Zrna.KategorijeZrno;
-import si.fri.prpo.skupina8.Zrna.KosariceZrno;
-import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
+import si.fri.prpo.skupina8.Zrna.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -35,6 +32,9 @@ public class UpravljanjeIzdelkovZrno {
 
     @Inject
     private TrgovineZrno trgovineZrno;
+
+    @Inject
+    private CeneVTrgovinahZrno ceneVTrgovinahZrno;
 
     @Inject
     private UpravljanjeIzdelkovZrno upravljanjeIzdelkovZrno;
@@ -65,14 +65,10 @@ public class UpravljanjeIzdelkovZrno {
             log.info("Izdelek ne obstaja!");
             return null;
         }
-        Integer cena = -1;
-        for(Trgovina t : izdelek.getTrgovine()){
-            if(t.getId() == izdelekTrgovinaDto.getTrgovina_id()){
-                cena = izdelek.getCena();
-            }
-        }
-        if(cena < 0) {
-            log.info("Izdelka ni v tej trgovini");
+        Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
+
+        if(cena == null){
+            log.info("izdelka ni v trgovini");
             return null;
         }
 

@@ -19,11 +19,11 @@ public class Trgovina {
     @Column(name = "trgovina_ime")
     private String ime;
 
-    @Column(name = "trgovina_opis")
+    @Column(name = "trgovina_lokacija")
     private String lokacija;
 
-    @ManyToMany(mappedBy = "trgovine")
-    private List<Izdelek> izdelki;
+    @OneToMany(mappedBy = "trgovina")
+    private List<CeneVTrgovinah> cene;
 
     public Integer getId() {
         return id;
@@ -49,11 +49,11 @@ public class Trgovina {
         this.lokacija = lokacija;
     }
 
-    public List<Izdelek> getIzdelki() {
-        return izdelki;
+    public List<CeneVTrgovinah> getCene() {
+        return cene;
     }
 
-    public void setIzdelki(List<Izdelek> izdelki) {
-        this.izdelki = izdelki;
+    public void setCene(List<CeneVTrgovinah> cene) {
+        this.cene = cene;
     }
 }

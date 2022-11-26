@@ -9,8 +9,6 @@ import java.util.List;
                 @NamedQuery(name = "Izdelek.getAll", query = "SELECT i FROM Izdelek i"),
                 @NamedQuery(name = "Izdelek.getByKategorija", query = "SELECT i FROM Izdelek i WHERE i.kategorija.kategorija_id = :kategorija"),
                 @NamedQuery(name = "Izdelek.getPopular", query = "SELECT i FROM Izdelek i ORDER BY i.stNakupov DESC"),
-                @NamedQuery(name = "Izdelek.getCheaper", query = "SELECT i FROM Izdelek i WHERE i.cena < :cena"),
-                @NamedQuery(name = "Izdelek.updateCena", query = "UPDATE Izdelek i SET i.cena = :cena WHERE i.ime = :ime"),
                 @NamedQuery(name = "Izdelek.deleteUndefined", query = "DELETE FROM Izdelek i WHERE i.ime IS NULL ")
         })
 
@@ -28,8 +26,6 @@ public class Izdelek {
     @Column(name = "izdelek_opis")
     private String opis;
 
-    @Column(name = "izdelek_cena")
-    private Integer cena;
 
     @Column(name = "stevilo_nakupov")
     private Integer stNakupov;
@@ -38,12 +34,9 @@ public class Izdelek {
     @JoinColumn(name = "kategorija_id")
     private Kategorija kategorija;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "izdelek_trgovina",joinColumns = {@JoinColumn(name = "fk_trgovina_id")},inverseJoinColumns = {@JoinColumn(name = "fk_izdelek_id")})
-    private List<Trgovina> trgovine;
+
+    @OneToMany(mappedBy = "izdelek")
+    private List<CeneVTrgovinah> cene;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
@@ -53,6 +46,23 @@ public class Izdelek {
     private List<Kosarica> kosarice;
 
     // getter in setter metode
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Ime: ");
+        sb.append(this.ime);
+        sb.append("\n Opis: ");
+        sb.append(this.opis);
+        sb.append("\n Kategorija: ");
+        sb.append(this.kategorija.getIme());
+        sb.append("\n\n");
+
+        return sb.toString();
+    }
+
     public Integer getId() {
         return id;
     }
@@ -72,16 +82,9 @@ public class Izdelek {
     public String getOpis() {
         return opis;
     }
+
     public void setOpis(String opis) {
         this.opis = opis;
-    }
-
-    public Integer getCena() {
-        return cena;
-    }
-
-    public void setCena(Integer cena) {
-        this.cena = cena;
     }
 
     public Integer getStNakupov() {
@@ -92,7 +95,6 @@ public class Izdelek {
         this.stNakupov = stNakupov;
     }
 
-
     public Kategorija getKategorija() {
         return kategorija;
     }
@@ -101,12 +103,12 @@ public class Izdelek {
         this.kategorija = kategorija;
     }
 
-    public List<Trgovina> getTrgovine() {
-        return trgovine;
+    public List<CeneVTrgovinah> getCene() {
+        return cene;
     }
 
-    public void setTrgovine(List<Trgovina> trgovine) {
-        this.trgovine = trgovine;
+    public void setCene(List<CeneVTrgovinah> cene) {
+        this.cene = cene;
     }
 
     public List<Kosarica> getKosarice() {
@@ -115,23 +117,5 @@ public class Izdelek {
 
     public void setKosarice(List<Kosarica> kosarice) {
         this.kosarice = kosarice;
-    }
-
-    @Override
-    public String toString() {
-
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Ime: ");
-        sb.append(this.ime);
-        sb.append("\n Opis: ");
-        sb.append(this.opis);
-        sb.append("\n Cena: ");
-        sb.append(this.cena);
-        sb.append("\n Kategorija: ");
-        sb.append(this.kategorija.getIme());
-        sb.append("\n\n");
-
-        return sb.toString();
     }
 }

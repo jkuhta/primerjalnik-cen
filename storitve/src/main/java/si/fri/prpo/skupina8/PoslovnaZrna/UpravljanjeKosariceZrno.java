@@ -6,6 +6,7 @@ import si.fri.prpo.skupina8.Dtos.KosaricaTrgovinaDto;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Trgovina;
+import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 import si.fri.prpo.skupina8.Zrna.KosariceZrno;
 import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
@@ -31,7 +32,7 @@ public class UpravljanjeKosariceZrno {
     private TrgovineZrno trgovineZrno;
 
     @Inject
-    private UpravljanjeIzdelkovZrno upravljanjeIzdelkovZrno;
+    private CeneVTrgovinahZrno ceneVTrgovinahZrno;
 
     @PostConstruct
     private void init() {
@@ -95,10 +96,8 @@ public class UpravljanjeKosariceZrno {
         }
 
         for (Izdelek izdelek : kosarica.getIzdelki()) {
-            IzdelekTrgovinaDto izdelekTrgovinaDto = new IzdelekTrgovinaDto();
-            izdelekTrgovinaDto.setIzdelek_id(izdelek.getId());
-            izdelekTrgovinaDto.setTrgovina_id(trgovina.getId());
-            skupnaCena += upravljanjeIzdelkovZrno.vrniCenoIzdelkaVTrgovini(izdelekTrgovinaDto);
+
+            skupnaCena += ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
         }
         kosarica.setCena(skupnaCena);
         kosariceZrno.updateKosarica(kosarica.getId(),kosarica);
