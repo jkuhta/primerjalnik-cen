@@ -47,6 +47,25 @@ public class IzdelkiZrno {
         return izdelek;
     }
 
+
+    public List<Izdelek> getIzdelkiByKategorija(Integer kategorijaId) {
+
+        Query q = em.createNamedQuery("Izdelek.getByKategorija");
+        q.setParameter("kategorija",kategorijaId);
+        List<Izdelek> izdelki = (List<Izdelek>) (q.getResultList());
+
+        return izdelki;
+    }
+
+
+    public List<Izdelek> getPopular() {
+
+        Query q = em.createNamedQuery("Izdelek.getPopular");
+        List<Izdelek> izdelki = (List<Izdelek>) (q.setMaxResults(10).getResultList());
+
+        return izdelki;
+    }
+
     @Transactional
     public Izdelek dodajIzdelek(Izdelek izdelek) {
 

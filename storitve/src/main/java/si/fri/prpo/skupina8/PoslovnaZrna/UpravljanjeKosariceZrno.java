@@ -54,7 +54,7 @@ public class UpravljanjeKosariceZrno {
     }
 
     @Transactional
-    public Izdelek dodajIzdelekVKosarico(KosaricaIzdelekDto kosaricaIzdelekDto) {
+    public Kosarica dodajIzdelekVKosarico(KosaricaIzdelekDto kosaricaIzdelekDto) {
         Kosarica kosarica = kosariceZrno.getKosarica(kosaricaIzdelekDto.getKosarica_id());
 
         if (kosarica == null) {
@@ -64,15 +64,17 @@ public class UpravljanjeKosariceZrno {
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(kosaricaIzdelekDto.getIzdelek_id());
 
-        if (kosarica == null) {
+        if (izdelek == null) {
             log.info("Ne morem dodati izdelka v kosarico. Izdelek ne obstaja!");
             return null;
         }
 
         kosarica.getIzdelki().add(izdelek);
         izdelek.getKosarice().add(kosarica);
+        izdelek.setStNakupov(izdelek.getStNakupov() + 1);
+        izdelkiZrno.updateIzdelek(izdelek.getId(),izdelek);
 
-        return izdelek;
+        return kosariceZrno.updateKosarica(kosarica.getId(),kosarica);
     }
 
     public Integer izracunajCenoKosariceVTrgovini(KosaricaTrgovinaDto kosaricaTrgovinaDto) {
@@ -87,7 +89,7 @@ public class UpravljanjeKosariceZrno {
 
         Trgovina trgovina = trgovineZrno.getTrgovina(kosaricaTrgovinaDto.getTrgovina_id());
 
-        if (kosarica == null) {
+        if (trgovina == null) {
             log.info("Ne morem izracunati cene kosarice. Trgovina ne obstaja!");
             return null;
         }
@@ -98,6 +100,8 @@ public class UpravljanjeKosariceZrno {
             izdelekTrgovinaDto.setTrgovina_id(trgovina.getId());
             skupnaCena += upravljanjeIzdelkovZrno.vrniCenoIzdelkaVTrgovini(izdelekTrgovinaDto);
         }
+        kosarica.setCena(skupnaCena);
+        kosariceZrno.updateKosarica(kosarica.getId(),kosarica);
 
         return skupnaCena;
     }
