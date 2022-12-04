@@ -1,4 +1,5 @@
 package si.fri.prpo.skupina8;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,11 +31,13 @@ public class Izdelek {
     @Column(name = "stevilo_nakupov")
     private Integer stNakupov;
 
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "kategorija_id")
     private Kategorija kategorija;
 
 
+    @JsonbTransient
     @OneToMany(mappedBy = "izdelek")
     private List<CeneVTrgovinah> cene;
 
@@ -42,6 +45,8 @@ public class Izdelek {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
+
+    @JsonbTransient
     @JoinTable(name = "izdelek_kosarica",joinColumns = {@JoinColumn(name = "fk_kosarica_id")},inverseJoinColumns = {@JoinColumn(name = "fk_izdelek_id")})
     private List<Kosarica> kosarice;
 

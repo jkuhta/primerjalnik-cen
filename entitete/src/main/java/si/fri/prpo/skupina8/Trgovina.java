@@ -1,4 +1,5 @@
 package si.fri.prpo.skupina8;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class Trgovina {
     @Column(name = "trgovina_lokacija")
     private String lokacija;
 
+    @JsonbTransient
     @OneToMany(mappedBy = "trgovina")
     private List<CeneVTrgovinah> cene;
 

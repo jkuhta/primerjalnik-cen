@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.util.List;
 
