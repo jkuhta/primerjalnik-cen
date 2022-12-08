@@ -38,7 +38,7 @@ public class Izdelek {
 
 
     @JsonbTransient
-    @OneToMany(mappedBy = "izdelek")
+    @OneToMany(mappedBy = "izdelek",cascade = CascadeType.ALL)
     private List<CeneVTrgovinah> cene;
 
     @ManyToMany(cascade = {

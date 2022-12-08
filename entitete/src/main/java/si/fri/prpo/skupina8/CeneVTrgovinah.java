@@ -6,7 +6,7 @@ import javax.persistence.*;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "CeneVTrgovinah.getAll", query = "SELECT c FROM CeneVTrgovinah c"),
-                @NamedQuery(name = "CeneVTrgovinah.getByIzdelekTrgovina", query = "SELECT c.cena FROM CeneVTrgovinah c WHERE c.izdelek.id = :izdelek AND c.trgovina.id = :trgovina"),
+                @NamedQuery(name = "CeneVTrgovinah.getByIzdelekTrgovina", query = "SELECT c FROM CeneVTrgovinah c WHERE c.izdelek.id = :izdelek AND c.trgovina.id = :trgovina"),
 
         })
 

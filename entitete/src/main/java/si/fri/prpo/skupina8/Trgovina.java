@@ -24,7 +24,7 @@ public class Trgovina {
     private String lokacija;
 
     @JsonbTransient
-    @OneToMany(mappedBy = "trgovina")
+    @OneToMany(mappedBy = "trgovina",cascade = CascadeType.ALL)
     private List<CeneVTrgovinah> cene;
 
     public Integer getId() {

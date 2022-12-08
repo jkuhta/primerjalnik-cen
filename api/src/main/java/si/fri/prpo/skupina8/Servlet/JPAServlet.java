@@ -36,6 +36,7 @@ public class JPAServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         PrintWriter writer = resp.getWriter();
         System.out.println("Zagon Servleta");
         writer.println("Pozdravljeni iz servleta");
@@ -73,9 +74,8 @@ public class JPAServlet extends HttpServlet {
         //izracun cene kosarice
         //v trgovini 1
         KosaricaTrgovinaDto kosaricaTrgovinaDto = new KosaricaTrgovinaDto();
-        kosaricaTrgovinaDto.setKosarica_id(1);
-        kosaricaTrgovinaDto.setTrgovina_id(1);
-        Integer cena = upravljanjeKosariceZrno.izracunajCenoKosariceVTrgovini(kosaricaTrgovinaDto);
+
+        Integer cena = upravljanjeKosariceZrno.izracunajCenoKosariceVTrgovini(1, 1);
 
 
         //vrni seznam najpopularnejsih izdelkov
@@ -87,13 +87,13 @@ public class JPAServlet extends HttpServlet {
         writer.println("\n\n");
 
         //vrni seznam izdelkov v kategoriji
-        KategorijaDto kategorijaDto = new KategorijaDto();
-        kategorijaDto.setKategorija_id(2);
+
         writer.println("Izdelki v kategoriji Hrana");
         List<Izdelek> izdelkiKategorija;
-        izdelkiKategorija = upravljanjeIzdelkovZrno.vrniSeznamIzdelkovVKategoriji(kategorijaDto);
+        izdelkiKategorija = upravljanjeIzdelkovZrno.vrniSeznamIzdelkovVKategoriji(2);
         writer.println(izdelkiKategorija);
         writer.println("\n\n");
+
 
     }
 }

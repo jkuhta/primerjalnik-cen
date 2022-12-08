@@ -41,4 +41,32 @@ public class KategorijeVir {
         return Response.status(Response.Status.OK).entity(kategorija).build();
     }
 
+    @POST
+    public Response dodajKategorijo(Kategorija kategorija) {
+
+        return Response
+                .status(Response.Status.CREATED)
+                .entity(kategorijeZrno.dodajKategorija(kategorija))
+                .build();
+    }
+
+    @PUT
+    @Path("{id}")
+    public Response posodobiKategorijo(@PathParam("id") int id, Kategorija kategorija){
+
+        return Response
+                .status(Response.Status.OK)
+                .entity(kategorijeZrno.updateKategorija(id, kategorija))
+                .build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response odstraniKategorijo(@PathParam("id") int id){
+
+        return Response.status(Response.Status.OK)
+                .entity(kategorijeZrno.izbrisiKategorija(id))
+                .build();
+    }
+
 }

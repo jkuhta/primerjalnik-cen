@@ -81,9 +81,9 @@ public class UpravljanjeKosariceZrno {
         return kosariceZrno.updateKosarica(kosarica.getId(),kosarica);
     }
 
-    public Integer izracunajCenoKosariceVTrgovini(KosaricaTrgovinaDto kosaricaTrgovinaDto) {
+    public Integer izracunajCenoKosariceVTrgovini(int kosarica_id, int trgovina_id) {
 
-        Kosarica kosarica = kosariceZrno.getKosarica(kosaricaTrgovinaDto.getKosarica_id());
+        Kosarica kosarica = kosariceZrno.getKosarica(kosarica_id);
         int skupnaCena = 0;
 
         if (kosarica == null) {
@@ -91,7 +91,7 @@ public class UpravljanjeKosariceZrno {
             return null;
         }
 
-        Trgovina trgovina = trgovineZrno.getTrgovina(kosaricaTrgovinaDto.getTrgovina_id());
+        Trgovina trgovina = trgovineZrno.getTrgovina(trgovina_id);
 
         if (trgovina == null) {
             log.info("Ne morem izracunati cene kosarice. Trgovina ne obstaja!");
@@ -100,7 +100,7 @@ public class UpravljanjeKosariceZrno {
 
         for (Izdelek izdelek : kosarica.getIzdelki()) {
 
-            Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
+            Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId()).getCena();
             if (cena == null) {
                 log.info("Izdelka iz kosarice ni v izbrani trgovini!");
                 return null;

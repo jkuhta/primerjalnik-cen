@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Trgovina;
 import si.fri.prpo.skupina8.Zrna.KosariceZrno;
@@ -35,5 +36,33 @@ public class TrgovineVir {
         Trgovina trgovina = trgovineZrno.getTrgovina(id); // pridobi izdelke
 
         return Response.status(Response.Status.OK).entity(trgovina).build();
+    }
+
+    @POST
+    public Response dodajIzdelek(Trgovina trgovina) {
+
+        return Response
+                .status(Response.Status.CREATED)
+                .entity(trgovineZrno.dodajTrgovina(trgovina))
+                .build();
+    }
+
+    @PUT
+    @Path("{id}")
+    public Response posodobiIzdelek(@PathParam("id") int id, Trgovina trgovina){
+
+        return Response
+                .status(Response.Status.OK)
+                .entity(trgovineZrno.updateTrgovina(id, trgovina))
+                .build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response odstraniTrgovino(@PathParam("id") int id){
+
+        return Response.status(Response.Status.OK)
+                .entity(trgovineZrno.izbrisiTrgovina(id))
+                .build();
     }
 }

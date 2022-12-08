@@ -1,13 +1,7 @@
 package si.fri.prpo.skupina8.PoslovnaZrna;
 
-import si.fri.prpo.skupina8.Dtos.IzdelekTrgovinaDto;
-import si.fri.prpo.skupina8.Dtos.KategorijaDto;
-import si.fri.prpo.skupina8.Dtos.KosaricaIzdelekDto;
-import si.fri.prpo.skupina8.Dtos.KosaricaTrgovinaDto;
-import si.fri.prpo.skupina8.Izdelek;
-import si.fri.prpo.skupina8.Kategorija;
-import si.fri.prpo.skupina8.Kosarica;
-import si.fri.prpo.skupina8.Trgovina;
+import si.fri.prpo.skupina8.*;
+import si.fri.prpo.skupina8.Dtos.*;
 import si.fri.prpo.skupina8.Zrna.*;
 
 import javax.annotation.PostConstruct;
@@ -53,21 +47,21 @@ public class UpravljanjeIzdelkovZrno {
         //zapiranje virov
     }
 
-    public Integer vrniCenoIzdelkaVTrgovini(IzdelekTrgovinaDto izdelekTrgovinaDto) {
-        Trgovina trgovina = trgovineZrno.getTrgovina(izdelekTrgovinaDto.getTrgovina_id());
+    public CeneVTrgovinah vrniCenoIzdelkaVTrgovini(int izdelek_id, int trgovina_id) {
+        Trgovina trgovina = trgovineZrno.getTrgovina(izdelek_id);
 
         if (trgovina == null) {
             log.info("Trgovina ne obstaja!");
             return null;
         }
 
-        Izdelek izdelek = izdelkiZrno.getIzdelek(izdelekTrgovinaDto.getIzdelek_id());
+        Izdelek izdelek = izdelkiZrno.getIzdelek(trgovina_id);
 
         if (izdelek == null) {
             log.info("Izdelek ne obstaja!");
             return null;
         }
-        Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
+        CeneVTrgovinah cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
 
         if(cena == null){
             log.info("izdelka ni v trgovini");
@@ -77,8 +71,8 @@ public class UpravljanjeIzdelkovZrno {
         return cena;
     }
 
-    public List<Izdelek> vrniSeznamIzdelkovVKategoriji(KategorijaDto kategorijaDto) {
-        Kategorija kategorija = kategorijeZrno.getKategorija(kategorijaDto.getKategorija_id());
+    public List<Izdelek> vrniSeznamIzdelkovVKategoriji(int kategorija_id) {
+        Kategorija kategorija = kategorijeZrno.getKategorija(kategorija_id);
         if(kategorija == null){
             log.info("Kategorija ne obstaja");
             return null;
