@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.CeneVTrgovinah;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
@@ -30,6 +31,7 @@ public class CeneVTrgovinahVir {
 
 
     @GET
+    @BeleziKlice
     public Response vrniCene(){
 
         List<CeneVTrgovinah> cene = ceneVTrgovinahZrno.getCeneVTrgovinah(); // pridobi izdelke
@@ -42,6 +44,7 @@ public class CeneVTrgovinahVir {
 
     @GET
     @Path("trgovine/{trgovina_id}/izdelki/{izdelek_id}")
+    @BeleziKlice
     public Response vrniCenoIzdelkaVTrgovini(@PathParam("trgovina_id") int trgovina_id,@PathParam("izdelek_id") int izdelek_id){
 
         return Response.status(Response.Status.OK)
@@ -51,6 +54,7 @@ public class CeneVTrgovinahVir {
 
     @GET
     @Path("kosarice/{kosarica_id}/trgovine/{trgovina_id}")
+    @BeleziKlice
     public Response vrniCenoKosariceVTrgovini(@PathParam("trgovina_id") int trgovina_id,@PathParam("kosarica_id") int kosarica_id){
 
         return Response.status(Response.Status.OK)

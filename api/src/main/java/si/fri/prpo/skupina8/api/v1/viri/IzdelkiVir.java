@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
@@ -27,6 +28,7 @@ public class IzdelkiVir {
 
 
     @GET
+    @BeleziKlice
     public Response vrniIzdelke(){
 
         List<Izdelek> izdelki = izdelkiZrno.getIzdelki(); // pridobi izdelke
@@ -37,6 +39,7 @@ public class IzdelkiVir {
 
     @GET
     @Path("{id}")
+    @BeleziKlice
     public Response vrniIzdelek(@PathParam("id") int id){
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(id); // pridobi izdelke
@@ -46,6 +49,7 @@ public class IzdelkiVir {
 
     @GET
     @Path("kategorije/{kategorija_id}")
+    @BeleziKlice
     public Response vrniIzdelkeVKategoriji(@PathParam("kategorija_id") int kategorija_id){
 
         List<Izdelek> izdelki = upravljanjeIzdelkovZrno.vrniSeznamIzdelkovVKategoriji(kategorija_id); // pridobi izdelke
@@ -55,6 +59,7 @@ public class IzdelkiVir {
 
     @GET
     @Path("popular")
+    @BeleziKlice
     public Response vrniIzdelkePopularne(){
 
         List<Izdelek> izdelki = upravljanjeIzdelkovZrno.vrniNajpopularnejše(); // pridobi izdelke
@@ -64,6 +69,7 @@ public class IzdelkiVir {
 
 
     @POST
+    @BeleziKlice
     public Response dodajIzdelek(Izdelek izdelek) {
 
         return Response
@@ -74,6 +80,7 @@ public class IzdelkiVir {
 
     @PUT
     @Path("{id}")
+    @BeleziKlice
     public Response posodobiIzdelek(@PathParam("id") int id, Izdelek izdelek){
 
         return Response
@@ -85,6 +92,7 @@ public class IzdelkiVir {
 
     @DELETE
     @Path("{id}")
+    @BeleziKlice
     public Response odstraniIzdelek(@PathParam("id") int id){
 
         return Response.status(Response.Status.OK)

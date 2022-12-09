@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Dtos.KosaricaIzdelekDto;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
@@ -27,6 +28,7 @@ public class KosariceVir {
     private UpravljanjeKosariceZrno upravljanjeKosariceZrno;
 
     @GET
+    @BeleziKlice
     public Response vrniKosarice(){
 
         List<Kosarica> kosarice = kosariceZrno.getKosarice(); // pridobi izdelke
@@ -37,6 +39,7 @@ public class KosariceVir {
 
     @GET
     @Path("{id}")
+    @BeleziKlice
     public Response vrniKosarico(@PathParam("id") int id){
 
         Kosarica kosarica = kosariceZrno.getKosarica(id); // pridobi izdelke
@@ -45,6 +48,7 @@ public class KosariceVir {
     }
 
     @POST
+    @BeleziKlice
     public Response dodajKosarico() {
 
 
@@ -54,6 +58,7 @@ public class KosariceVir {
                 .build();
     }
     @PUT
+    @BeleziKlice
     public Response dodajIzdelekVKosarico(KosaricaIzdelekDto kosaricaIzdelekDto){
 
         return Response
@@ -65,6 +70,7 @@ public class KosariceVir {
 
     @DELETE
     @Path("{id}")
+    @BeleziKlice
     public Response odstraniKosarico(@PathParam("id") int id){
 
         return Response.status(Response.Status.OK)

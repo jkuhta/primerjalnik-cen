@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
@@ -24,6 +25,7 @@ public class KategorijeVir {
     private KategorijeZrno kategorijeZrno;
 
     @GET
+    @BeleziKlice
     public Response vreniKategorije(){
 
         List<Kategorija> kategorije = kategorijeZrno.getKategorije(); // pridobi izdelke
@@ -34,6 +36,7 @@ public class KategorijeVir {
 
     @GET
     @Path("{id}")
+    @BeleziKlice
     public Response vrniKategorijo(@PathParam("id") int id){
 
         Kategorija kategorija = kategorijeZrno.getKategorija(id); // pridobi izdelke
@@ -42,6 +45,7 @@ public class KategorijeVir {
     }
 
     @POST
+    @BeleziKlice
     public Response dodajKategorijo(Kategorija kategorija) {
 
         return Response
@@ -52,6 +56,7 @@ public class KategorijeVir {
 
     @PUT
     @Path("{id}")
+    @BeleziKlice
     public Response posodobiKategorijo(@PathParam("id") int id, Kategorija kategorija){
 
         return Response
@@ -62,6 +67,7 @@ public class KategorijeVir {
 
     @DELETE
     @Path("{id}")
+    @BeleziKlice
     public Response odstraniKategorijo(@PathParam("id") int id){
 
         return Response.status(Response.Status.OK)

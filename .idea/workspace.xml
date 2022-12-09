@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Anotacije/BeleziKlice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Interceptorji/BelezenjeKlicevInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/BelezenjeKlicevZrno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/CeneVTrgovinah.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/CeneVTrgovinah.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Izdelek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Trgovina.java" beforeDir="false" afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Trgovina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Dtos/IzdelekDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/CeneVTrgovinahZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/CeneVTrgovinahZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/resources/META-INF/beans.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -94,6 +91,7 @@
       <workItem from="1670157197179" duration="1110000" />
       <workItem from="1670158359353" duration="8145000" />
       <workItem from="1670426750954" duration="17896000" />
+      <workItem from="1670572387995" duration="7400000" />
     </task>
     <servers />
   </component>
