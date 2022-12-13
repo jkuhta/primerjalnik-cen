@@ -1,5 +1,8 @@
 package si.fri.prpo.skupina8.Zrna;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
+import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
 
 import javax.annotation.PostConstruct;
@@ -46,6 +49,17 @@ public class KategorijeZrno {
 
         return kategorija;
     }
+
+    public List<Kategorija> pridobiKategorije(QueryParameters query){
+        List<Kategorija> kategorije = JPAUtils.queryEntities(em, Kategorija.class, query);
+        return kategorije;
+    }
+
+    public Long steviloKategorij(QueryParameters query){
+        Long count = JPAUtils.queryEntitiesCount(em,Kategorija.class,query);
+        return count;
+    }
+
 
     @Transactional
     public Kategorija dodajKategorija(Kategorija kategorija) {

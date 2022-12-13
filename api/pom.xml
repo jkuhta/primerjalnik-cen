@@ -18,6 +18,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.kumuluz.ee.rest</groupId>
+            <artifactId>kumuluzee-rest-core</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-core</artifactId>
         </dependency>
@@ -37,10 +42,13 @@
             <artifactId>kumuluzee-json-b-yasson</artifactId>
         </dependency>
 
+
         <dependency>
             <groupId>si.fri.prpo.skupina8</groupId>
             <artifactId>storitve</artifactId>
         </dependency>
+
+
     </dependencies>
 
     <build>

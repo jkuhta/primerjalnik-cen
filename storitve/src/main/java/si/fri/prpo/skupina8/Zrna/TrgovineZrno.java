@@ -1,5 +1,8 @@
 package si.fri.prpo.skupina8.Zrna;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
+import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Trgovina;
 import si.fri.prpo.skupina8.Trgovina;
 
@@ -46,6 +49,17 @@ public class TrgovineZrno {
 
         return trgovina;
     }
+
+    public List<Trgovina> pridobiTrgovine(QueryParameters query){
+        List<Trgovina> trgovine = JPAUtils.queryEntities(em, Trgovina.class, query);
+        return trgovine;
+    }
+
+    public Long steviloTrgovin(QueryParameters query){
+        Long count = JPAUtils.queryEntitiesCount(em,Trgovina.class,query);
+        return count;
+    }
+
 
     @Transactional
     public Trgovina dodajTrgovina(Trgovina trgovina) {

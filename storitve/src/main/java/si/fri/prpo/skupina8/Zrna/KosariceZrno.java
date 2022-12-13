@@ -1,5 +1,8 @@
 package si.fri.prpo.skupina8.Zrna;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
+import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Kosarica;
 
@@ -45,6 +48,15 @@ public class KosariceZrno {
         Kosarica kosarica = em.find(Kosarica.class, kosaricaId);
 
         return kosarica;
+    }
+    public List<Kosarica> pridobiKosarice(QueryParameters query){
+        List<Kosarica> kosarica = JPAUtils.queryEntities(em, Kosarica.class, query);
+        return kosarica;
+    }
+
+    public Long steviloKosaric(QueryParameters query){
+        Long count = JPAUtils.queryEntitiesCount(em,Kosarica.class,query);
+        return count;
     }
 
     @Transactional

@@ -1,6 +1,8 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
 import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
+import si.fri.prpo.skupina8.CeneVTrgovinah;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
@@ -9,8 +11,10 @@ import si.fri.prpo.skupina8.Zrna.KategorijeZrno;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +24,8 @@ import java.util.List;
 @ApplicationScoped
 public class KategorijeVir {
 
-
+    @Context
+    protected UriInfo uriInfo;
     @Inject
     private KategorijeZrno kategorijeZrno;
 
@@ -29,8 +34,11 @@ public class KategorijeVir {
     public Response vreniKategorije(){
 
         List<Kategorija> kategorije = kategorijeZrno.getKategorije(); // pridobi izdelke
+        QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
+        List<Kategorija> kategorija1 = kategorijeZrno.pridobiKategorije(query);
+        Long kategorijeCount = kategorijeZrno.steviloKategorij(query);
 
-        return Response.status(Response.Status.OK).entity(kategorije).build();
+        return Response.ok(kategorija1).header("X-Total-Count",kategorijeCount).build();
     }
 
 

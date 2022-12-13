@@ -1,5 +1,7 @@
 package si.fri.prpo.skupina8.PoslovnaZrna;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.*;
 import si.fri.prpo.skupina8.Dtos.*;
 import si.fri.prpo.skupina8.Zrna.*;
@@ -83,7 +85,6 @@ public class UpravljanjeIzdelkovZrno {
     public List<Izdelek> vrniNajpopularnejše() {
         return izdelkiZrno.getPopular();
     }
-
 
 
 }

@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
 import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
@@ -10,8 +11,10 @@ import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @Path("trgovine")
@@ -19,6 +22,8 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class TrgovineVir {
+    @Context
+    protected UriInfo uriInfo;
     @Inject
     private TrgovineZrno trgovineZrno;
 
@@ -27,8 +32,11 @@ public class TrgovineVir {
     public Response vrniTrgovine(){
 
         List<Trgovina> trgovine = trgovineZrno.getTrgovine(); // pridobi izdelke
+        QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
+        List<Trgovina> trgovine1 = trgovineZrno.pridobiTrgovine(query);
+        Long trgovineCount = trgovineZrno.steviloTrgovin(query);
 
-        return Response.status(Response.Status.OK).entity(trgovine).build();
+        return Response.ok(trgovine1).header("X-Total-Count",trgovineCount).build();
     }
 
     @GET

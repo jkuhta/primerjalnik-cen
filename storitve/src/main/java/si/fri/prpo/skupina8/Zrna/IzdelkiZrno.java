@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.logging.Logger;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
 
@@ -42,6 +44,16 @@ public class IzdelkiZrno {
         List<Izdelek> izdelki = (List<Izdelek>) (q.getResultList());
 
         return izdelki;
+    }
+
+    public List<Izdelek> pridobiIzdelke(QueryParameters query){
+         List<Izdelek> izdelki = JPAUtils.queryEntities(em, Izdelek.class, query);
+         return izdelki;
+    }
+
+    public Long steviloIzdelkov(QueryParameters query){
+        Long count = JPAUtils.queryEntitiesCount(em,Izdelek.class,query);
+        return count;
     }
 
     public Izdelek getIzdelek(int izdelekId) {

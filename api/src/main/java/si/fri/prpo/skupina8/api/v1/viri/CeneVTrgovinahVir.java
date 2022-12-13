@@ -1,7 +1,9 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
 import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.CeneVTrgovinah;
+import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
 import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
@@ -9,8 +11,10 @@ import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 
@@ -20,6 +24,8 @@ import java.util.List;
 @ApplicationScoped
 public class CeneVTrgovinahVir {
 
+    @Context
+    protected UriInfo uriInfo;
     @Inject
     private CeneVTrgovinahZrno ceneVTrgovinahZrno;
 
@@ -35,10 +41,11 @@ public class CeneVTrgovinahVir {
     public Response vrniCene(){
 
         List<CeneVTrgovinah> cene = ceneVTrgovinahZrno.getCeneVTrgovinah(); // pridobi izdelke
+        QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
+        List<CeneVTrgovinah> cene1 = ceneVTrgovinahZrno.pridobiCene(query);
+        Long ceneCount = ceneVTrgovinahZrno.steviloCen(query);
 
-        return Response.status(Response.Status.OK)
-                .entity(cene)
-                .build();
+        return Response.ok(cene1).header("X-Total-Count",ceneCount).build();
     }
 
 

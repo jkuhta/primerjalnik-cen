@@ -1,5 +1,6 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
 import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Dtos.KosaricaIzdelekDto;
 import si.fri.prpo.skupina8.Izdelek;
@@ -12,8 +13,10 @@ import si.fri.prpo.skupina8.Zrna.KosariceZrno;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @Path("kosarice")
@@ -21,6 +24,8 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class KosariceVir {
+    @Context
+    protected UriInfo uriInfo;
     @Inject
     private KosariceZrno kosariceZrno;
 
@@ -32,8 +37,11 @@ public class KosariceVir {
     public Response vrniKosarice(){
 
         List<Kosarica> kosarice = kosariceZrno.getKosarice(); // pridobi izdelke
+        QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
+        List<Kosarica> kosarice1 = kosariceZrno.pridobiKosarice(query);
+        Long kosariceCount = kosariceZrno.steviloKosaric(query);
 
-        return Response.status(Response.Status.OK).entity(kosarice).build();
+        return Response.ok(kosarice1).header("X-Total-Count",kosariceCount).build();
     }
 
 

@@ -12,6 +12,8 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.kumuluz.ee.rest.beans.QueryParameters;
+import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.CeneVTrgovinah;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Trgovina;
@@ -48,6 +50,17 @@ public class CeneVTrgovinahZrno {
 
         return cene;
     }
+
+    public List<CeneVTrgovinah> pridobiCene(QueryParameters query){
+        List<CeneVTrgovinah> cene = JPAUtils.queryEntities(em, CeneVTrgovinah.class, query);
+        return cene;
+    }
+
+    public Long steviloCen(QueryParameters query){
+        Long count = JPAUtils.queryEntitiesCount(em,CeneVTrgovinah.class,query);
+        return count;
+    }
+
 
     public CeneVTrgovinah getCenaVTrgovini(int trgovinaId,int izdelekId) {
 
