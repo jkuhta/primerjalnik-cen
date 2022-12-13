@@ -1,6 +1,16 @@
 package si.fri.prpo.skupina8.api.v1.viri;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.headers.Header;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import si.fri.prpo.skupina8.Anotacije.BeleziKlice;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
@@ -19,6 +29,7 @@ import java.util.List;
 @Path("izdelki")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Tag(name = "Izdelki")
 @ApplicationScoped
 public class IzdelkiVir {
 
@@ -34,6 +45,13 @@ public class IzdelkiVir {
 
 
     @GET
+    @Operation(description = "Vrne seznam izdelkov", summary = "Seznam izdelkov")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Seznam izdelkov",
+                    content = @Content(schema = @Schema(implementation = Izdelek.class, type = SchemaType.ARRAY)),
+                    headers = {@Header(name = "X-Total-Count", description = "Število vrnjenih izdelkov")})
+    })
     @BeleziKlice
     public Response vrniIzdelke(){
         QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
@@ -44,10 +62,19 @@ public class IzdelkiVir {
     }
 
 
+
     @GET
+    @Operation(description = "Vrne podrobnosti izdelka", summary = "Podrobnosti izdelka")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Podrobnosti izdelka",
+                    content = @Content(schema = @Schema(implementation = Izdelek.class))
+            )})
     @Path("{id}")
     @BeleziKlice
-    public Response vrniIzdelek(@PathParam("id") int id){
+    public Response vrniIzdelek(@Parameter(
+            description = "Identifikator izdelka",
+            required = true) @PathParam("id") int id){
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(id); // pridobi izdelke
 
@@ -55,14 +82,28 @@ public class IzdelkiVir {
     }
 
     @GET
+    @Operation(description = "Vrne seznam izdelkov v izbrani kategoriji", summary = "Seznam izdelkov glede na kategorijo")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Seznam izdelkov glede na kategorijo",
+                    content = @Content(schema = @Schema(implementation = Izdelek.class))
+            )})
     @Path("kategorije/{kategorija_id}")
     @BeleziKlice
-    public Response vrniIzdelkeVKategoriji(@PathParam("kategorija_id") int kategorija_id){
+    public Response vrniIzdelkeVKategoriji(@Parameter(
+            description = "Identifikator kategorije",
+            required = true) @PathParam("kategorija_id") int kategorija_id){
         List<Izdelek> izdelki = upravljanjeIzdelkovZrno.vrniSeznamIzdelkovVKategoriji(kategorija_id); // pridobi izdelke
         return Response.ok(Response.Status.OK).entity(izdelki).build();
     }
 
     @GET
+    @Operation(description = "Vrne seznam najpopularnejših izdelkov", summary = "Seznam najpopularnejših izdelkov")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Seznam najpopularnejših izdelkov",
+                    content = @Content(schema = @Schema(implementation = Izdelek.class))
+            )})
     @Path("popular")
     @BeleziKlice
     public Response vrniIzdelkePopularne(){
@@ -74,8 +115,17 @@ public class IzdelkiVir {
 
 
     @POST
+    @Operation(description = "Dodaj izdelek", summary = "Dodajanje izdelka")
+    @APIResponses({
+            @APIResponse(responseCode = "201",
+                    description = "Izdlek uspešno dodan"
+            )})
     @BeleziKlice
-    public Response dodajIzdelek(Izdelek izdelek) {
+    public Response dodajIzdelek(@RequestBody(
+            description = "DTO objekt za dodajanje izdelkov.",
+            required = true,
+            content = @Content(schema = @Schema(implementation = Izdelek.class)))
+            Izdelek izdelek) {
 
         return Response
                 .status(Response.Status.CREATED)
@@ -84,9 +134,20 @@ public class IzdelkiVir {
     }
 
     @PUT
+    @Operation(description = "Posodobi izdelek", summary = "Posodabljanje izdelka")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Izdelek uspešno posodobljen"
+            )})
     @Path("{id}")
     @BeleziKlice
-    public Response posodobiIzdelek(@PathParam("id") int id, Izdelek izdelek){
+    public Response posodobiIzdelek(@Parameter(
+            description = "Identifikator izdelka za posodobitev",
+            required = true) @PathParam("id") int id, @RequestBody(
+            description = "DTO objekt za posodabljanje izdelkov.",
+            required = true,
+            content = @Content(schema = @Schema(implementation = Izdelek.class)))
+    Izdelek izdelek) {
 
         return Response
                 .status(Response.Status.OK)
@@ -96,9 +157,16 @@ public class IzdelkiVir {
 
 
     @DELETE
+    @Operation(description = "Odstrani izdelek", summary = "Odstranjevanje izdelka")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Izdlek uspešno odstranjen"
+            )})
     @Path("{id}")
     @BeleziKlice
-    public Response odstraniIzdelek(@PathParam("id") int id){
+    public Response odstraniIzdelek(@Parameter(
+            description = "Identifikator izdelka za brisanje",
+            required = true) @PathParam("id") int id){
 
         return Response.status(Response.Status.OK)
                 .entity(izdelkiZrno.izbrisiIzdelek(id))
