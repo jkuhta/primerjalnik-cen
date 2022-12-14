@@ -100,7 +100,9 @@ public class KosariceVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Izdelek uspešno dodan v košarico"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Validacijska napaka")})
     @BeleziKlice
     public Response dodajIzdelekVKosarico(@RequestBody(
             description = "DTO objekt za dodajanje izdelka v košarico.",

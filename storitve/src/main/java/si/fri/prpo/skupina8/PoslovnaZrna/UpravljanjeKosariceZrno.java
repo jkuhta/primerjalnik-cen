@@ -10,6 +10,8 @@ import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 import si.fri.prpo.skupina8.Zrna.KosariceZrno;
 import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
+import si.fri.prpo.skupina8.izjeme.NeveljavenKosaricaIzdelekDtoIzjema;
+
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
@@ -60,17 +62,18 @@ public class UpravljanjeKosariceZrno {
     @Transactional
     public Kosarica dodajIzdelekVKosarico(KosaricaIzdelekDto kosaricaIzdelekDto) {
         Kosarica kosarica = kosariceZrno.getKosarica(kosaricaIzdelekDto.getKosarica_id());
-
         if (kosarica == null) {
-            log.info("Ne morem dodati izdelka v kosarico. Kosarica ne obstaja!");
-            return null;
+            String msg = "Košarica z id = " + kosaricaIzdelekDto.getKosarica_id() + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenKosaricaIzdelekDtoIzjema(msg);
         }
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(kosaricaIzdelekDto.getIzdelek_id());
 
         if (izdelek == null) {
-            log.info("Ne morem dodati izdelka v kosarico. Izdelek ne obstaja!");
-            return null;
+            String msg = "Izdelek z id = " + kosaricaIzdelekDto.getIzdelek_id() + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenKosaricaIzdelekDtoIzjema(msg);
         }
 
         kosarica.getIzdelki().add(izdelek);

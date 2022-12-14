@@ -58,9 +58,17 @@ public class TrgovineVir {
     }
 
     @GET
+    @Operation(description = "Vrne podrobnosti trgovine", summary = "Podrobnosti trgovine")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Podrobnosti trgovine",
+                    content = @Content(schema = @Schema(implementation = Trgovina.class))
+            )})
     @Path("{id}")
     @BeleziKlice
-    public Response vrniTrgovino(@PathParam("id") int id){
+    public Response vrniTrgovino(@Parameter(
+            description = "Identifikator trgovine",
+            required = true) @PathParam("id") int id){
 
         Trgovina trgovina = trgovineZrno.getTrgovina(id); // pridobi izdelke
 
