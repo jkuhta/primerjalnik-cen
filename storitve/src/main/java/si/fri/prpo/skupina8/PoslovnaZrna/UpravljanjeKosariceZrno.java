@@ -1,8 +1,6 @@
 package si.fri.prpo.skupina8.PoslovnaZrna;
 
-import si.fri.prpo.skupina8.Dtos.IzdelekTrgovinaDto;
 import si.fri.prpo.skupina8.Dtos.KosaricaIzdelekDto;
-import si.fri.prpo.skupina8.Dtos.KosaricaTrgovinaDto;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Trgovina;
@@ -10,17 +8,13 @@ import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 import si.fri.prpo.skupina8.Zrna.KosariceZrno;
 import si.fri.prpo.skupina8.Zrna.TrgovineZrno;
-import si.fri.prpo.skupina8.izjeme.NeveljavenKosaricaIzdelekDtoIzjema;
-
-import java.util.UUID;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import java.util.UUID;
 import java.util.logging.Logger;
 
 @ApplicationScoped
@@ -65,7 +59,7 @@ public class UpravljanjeKosariceZrno {
         if (kosarica == null) {
             String msg = "Košarica z id = " + kosaricaIzdelekDto.getKosarica_id() + " ne obstaja!";
             log.severe(msg);
-            throw new NeveljavenKosaricaIzdelekDtoIzjema(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(kosaricaIzdelekDto.getIzdelek_id());
@@ -73,7 +67,7 @@ public class UpravljanjeKosariceZrno {
         if (izdelek == null) {
             String msg = "Izdelek z id = " + kosaricaIzdelekDto.getIzdelek_id() + " ne obstaja!";
             log.severe(msg);
-            throw new NeveljavenKosaricaIzdelekDtoIzjema(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         kosarica.getIzdelki().add(izdelek);
@@ -90,23 +84,26 @@ public class UpravljanjeKosariceZrno {
         int skupnaCena = 0;
 
         if (kosarica == null) {
-            log.info("Ne morem izracunati cene kosarice. Kosarica ne obstaja!");
-            return null;
+            String msg = "Košarica z id = " + kosarica_id + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         Trgovina trgovina = trgovineZrno.getTrgovina(trgovina_id);
 
         if (trgovina == null) {
-            log.info("Ne morem izracunati cene kosarice. Trgovina ne obstaja!");
-            return null;
+            String msg = "Trgovina z id = " + trgovina_id + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         for (Izdelek izdelek : kosarica.getIzdelki()) {
 
             Integer cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId()).getCena();
             if (cena == null) {
-                log.info("Izdelka iz kosarice ni v izbrani trgovini!");
-                return null;
+                String msg = "Izdelek " + izdelek.getIme() + " ne obstaja v trgovini " + trgovina.getIme() + "!";
+                log.severe(msg);
+                throw new NeveljavenDtoIzjema(msg);
             }
 
             skupnaCena += cena;

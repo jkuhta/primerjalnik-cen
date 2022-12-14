@@ -17,6 +17,7 @@ import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.CeneVTrgovinah;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Trgovina;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 
 @ApplicationScoped
@@ -67,15 +68,17 @@ public class CeneVTrgovinahZrno {
         Trgovina trgovina = trgovineZrno.getTrgovina(trgovinaId);
 
         if (trgovina == null) {
-            log.info("Trgovina ne obstaja!");
-            return null;
+            String msg = "Trgovina z id = " + trgovinaId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(izdelekId);
 
         if (izdelek == null) {
-            log.info("Izdelek ne obstaja!");
-            return null;
+            String msg = "Izdelek z id = " + izdelekId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         try{

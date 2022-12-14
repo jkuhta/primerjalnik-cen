@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/mappers/NeveljavenKosaricaIzdelekDtoExceptionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/izjeme/NeveljavenKosaricaIzdelekDtoIzjema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/mappers/NeveljavenKosaricaIzdelekDtoExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/mappers/NeveljavenDtoExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeIzdelkovZrno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/PoslovnaZrna/UpravljanjeKosariceZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/CeneVTrgovinahZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/CeneVTrgovinahZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/IzdelkiZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/IzdelkiZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/KategorijeZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/KategorijeZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/KosariceZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/KosariceZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/TrgovineZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/TrgovineZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/izjeme/NeveljavenKosaricaIzdelekDtoIzjema.java" beforeDir="false" afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/izjeme/NeveljavenDtoIzjema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +99,7 @@
       <workItem from="1670921535523" duration="998000" />
       <workItem from="1670922557858" duration="8095000" />
       <workItem from="1670946997950" duration="541000" />
-      <workItem from="1670947548620" duration="11477000" />
+      <workItem from="1670947548620" duration="12895000" />
     </task>
     <servers />
   </component>

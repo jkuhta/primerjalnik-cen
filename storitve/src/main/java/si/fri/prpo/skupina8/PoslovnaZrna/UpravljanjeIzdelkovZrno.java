@@ -5,6 +5,7 @@ import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.*;
 import si.fri.prpo.skupina8.Dtos.*;
 import si.fri.prpo.skupina8.Zrna.*;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -53,21 +54,24 @@ public class UpravljanjeIzdelkovZrno {
         Trgovina trgovina = trgovineZrno.getTrgovina(izdelek_id);
 
         if (trgovina == null) {
-            log.info("Trgovina ne obstaja!");
-            return null;
+            String msg = "Trgovina z id = " + trgovina_id + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         Izdelek izdelek = izdelkiZrno.getIzdelek(trgovina_id);
 
         if (izdelek == null) {
-            log.info("Izdelek ne obstaja!");
-            return null;
+            String msg = "Izdelek z id = " + izdelek_id + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
         CeneVTrgovinah cena = ceneVTrgovinahZrno.getCenaVTrgovini(trgovina.getId(),izdelek.getId());
 
-        if(cena == null){
-            log.info("izdelka ni v trgovini");
-            return null;
+        if (cena == null){
+            String msg = "Izdelka " + izdelek.getIme() + " ne obstaja v trgovini " + trgovina.getIme() + "!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
 
         return cena;
@@ -76,8 +80,9 @@ public class UpravljanjeIzdelkovZrno {
     public List<Izdelek> vrniSeznamIzdelkovVKategoriji(int kategorija_id) {
         Kategorija kategorija = kategorijeZrno.getKategorija(kategorija_id);
         if(kategorija == null){
-            log.info("Kategorija ne obstaja");
-            return null;
+            String msg = "Kategorija z id = " + kategorija_id + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
         }
         return izdelkiZrno.getIzdelkiByKategorija(kategorija.getId());
     }

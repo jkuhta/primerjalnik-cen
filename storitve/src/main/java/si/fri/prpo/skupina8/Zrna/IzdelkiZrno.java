@@ -16,6 +16,8 @@ import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
+import si.fri.prpo.skupina8.Trgovina;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 
 @ApplicationScoped
@@ -96,6 +98,12 @@ public class IzdelkiZrno {
 
         Izdelek izdelek = getIzdelek(izdelekId);
 
+        if (izdelek == null) {
+            String msg = "Izdelek z id = " + izdelekId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
+        }
+
         izdelekNew.setId(izdelek.getId());
         em.merge(izdelekNew);
 
@@ -111,8 +119,9 @@ public class IzdelkiZrno {
             em.remove(izdelek);
             return true;
         }
-        return false;
-
+        String msg = "Izdelek z id = " + izdelekId + " ne obstaja!";
+        log.severe(msg);
+        throw new NeveljavenDtoIzjema(msg);
     }
 
 }

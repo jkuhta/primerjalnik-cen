@@ -5,6 +5,7 @@ import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
 import si.fri.prpo.skupina8.Kosarica;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -73,6 +74,11 @@ public class KosariceZrno {
 
         Kosarica kosarica = getKosarica(kosaricaId);
 
+        if (kosarica == null) {
+            String msg = "Košarica z id = " + kosaricaId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
+        }
         kosaricaNew.setId(kosarica.getId());
         em.merge(kosaricaNew);
 
@@ -88,7 +94,9 @@ public class KosariceZrno {
             em.remove(kosarica);
             return true;
         }
-        return false;
+        String msg = "Košarica z id = " + kosaricaId + " ne obstaja!";
+        log.severe(msg);
+        throw new NeveljavenDtoIzjema(msg);
 
     }
 

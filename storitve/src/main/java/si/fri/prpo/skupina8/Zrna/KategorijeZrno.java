@@ -4,6 +4,7 @@ import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kategorija;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -73,9 +74,15 @@ public class KategorijeZrno {
     @Transactional
     public Kategorija updateKategorija(int kategorijaId, Kategorija kategorijaNew) {
 
-        Kategorija Kategorija = getKategorija(kategorijaId);
+        Kategorija kategorija = getKategorija(kategorijaId);
 
-        kategorijaNew.setId(Kategorija.getId());
+        if (kategorija == null) {
+            String msg = "Kategorija z id = " + kategorijaId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
+        }
+
+        kategorijaNew.setId(kategorija.getId());
         em.merge(kategorijaNew);
 
         return kategorijaNew;
@@ -90,7 +97,9 @@ public class KategorijeZrno {
             em.remove(kategorija);
             return true;
         }
-        return false;
+        String msg = "Kategorija z id = " + kategorijaId + " ne obstaja!";
+        log.severe(msg);
+        throw new NeveljavenDtoIzjema(msg);
 
     }
 

@@ -102,7 +102,7 @@ public class KosariceVir {
                     description = "Izdelek uspešno dodan v košarico"
             ),
             @APIResponse(responseCode = "400",
-                    description = "Validacijska napaka")})
+                    description = "Neveljaven vnos")})
     @BeleziKlice
     public Response dodajIzdelekVKosarico(@RequestBody(
             description = "DTO objekt za dodajanje izdelka v košarico.",
@@ -122,7 +122,9 @@ public class KosariceVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Košarica uspešno odstranjen"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Neveljaven vnos")})
     @Path("{id}")
     @BeleziKlice
     public Response odstraniKosarico(@Parameter(

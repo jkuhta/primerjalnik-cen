@@ -102,7 +102,9 @@ public class KategorijeVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Kategorija uspešno posodobljena"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Neveljaven vnos")})
     @Path("{id}")
     @BeleziKlice
     public Response posodobiKategorijo(@Parameter(
@@ -124,7 +126,9 @@ public class KategorijeVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Kategorija uspešno odstranjena"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Neveljaven vnos")})
     @Path("{id}")
     @BeleziKlice
     public Response odstraniKategorijo(@Parameter(

@@ -5,6 +5,7 @@ import com.kumuluz.ee.rest.utils.JPAUtils;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Trgovina;
 import si.fri.prpo.skupina8.Trgovina;
+import si.fri.prpo.skupina8.izjeme.NeveljavenDtoIzjema;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -75,6 +76,11 @@ public class TrgovineZrno {
 
         Trgovina trgovina = getTrgovina(trgovinaId);
 
+        if (trgovina == null) {
+            String msg = "Trgovina z id = " + trgovinaId + " ne obstaja!";
+            log.severe(msg);
+            throw new NeveljavenDtoIzjema(msg);
+        }
         trgovinaNew.setId(trgovina.getId());
         em.merge(trgovinaNew);
 
@@ -90,7 +96,9 @@ public class TrgovineZrno {
             em.remove(trgovina);
             return true;
         }
-        return false;
+        String msg = "Trgovina z id = " + trgovinaId + " ne obstaja!";
+        log.severe(msg);
+        throw new NeveljavenDtoIzjema(msg);
 
     }
 

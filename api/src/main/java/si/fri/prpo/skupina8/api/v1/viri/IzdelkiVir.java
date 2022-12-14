@@ -138,7 +138,9 @@ public class IzdelkiVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Izdelek uspešno posodobljen"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Neveljaven vnos")})
     @Path("{id}")
     @BeleziKlice
     public Response posodobiIzdelek(@Parameter(
@@ -161,7 +163,9 @@ public class IzdelkiVir {
     @APIResponses({
             @APIResponse(responseCode = "200",
                     description = "Izdlek uspešno odstranjen"
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+                    description = "Neveljaven vnos")})
     @Path("{id}")
     @BeleziKlice
     public Response odstraniIzdelek(@Parameter(
