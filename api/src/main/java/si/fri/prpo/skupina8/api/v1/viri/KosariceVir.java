@@ -121,7 +121,7 @@ public class KosariceVir {
     @Operation(description = "Odstrani košarico", summary = "Odstranjevanje košarice")
     @APIResponses({
             @APIResponse(responseCode = "200",
-                    description = "Košarica uspešno odstranjen"
+                    description = "Košarica uspešno odstranjena"
             ),
             @APIResponse(responseCode = "400",
                     description = "Neveljaven vnos")})
