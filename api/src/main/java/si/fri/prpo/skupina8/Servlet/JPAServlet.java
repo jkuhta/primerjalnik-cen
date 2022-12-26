@@ -6,8 +6,10 @@ import si.fri.prpo.skupina8.Dtos.KosaricaIzdelekDto;
 import si.fri.prpo.skupina8.Dtos.KosaricaTrgovinaDto;
 import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.Kosarica;
+import si.fri.prpo.skupina8.NinjasObj;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
+import si.fri.prpo.skupina8.Zrna.CalorieNinjasZrno;
 import si.fri.prpo.skupina8.Zrna.IzdelkiZrno;
 
 import javax.inject.Inject;
@@ -33,6 +35,10 @@ public class JPAServlet extends HttpServlet {
     @Inject
     private UpravljanjeIzdelkovZrno upravljanjeIzdelkovZrno;
 
+    @Inject
+    private CalorieNinjasZrno calorieNinjasZrno;
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -51,8 +57,11 @@ public class JPAServlet extends HttpServlet {
         Optional<String> microserviceName = ConfigurationUtil.getInstance().get("kumuluzee.name");
         microserviceName.ifPresent(s -> writer.println("Izpis generiran v mikrostoritvi " + s + "\n"));
 
-
-        List<Izdelek> izdelki;
+        NinjasObj obj;
+        obj = calorieNinjasZrno.vrniNutritionIzdelka("tomato");
+        writer.println(obj);
+        //izdelki.stream().forEach(u->writer.append(u.toString()+ "\n"));
+        /*List<Izdelek> izdelki;
         izdelki = izdelkiZrno.getIzdelki();
         writer.println(izdelki);
         //izdelki.stream().forEach(u->writer.append(u.toString()+ "\n"));
@@ -94,6 +103,6 @@ public class JPAServlet extends HttpServlet {
         writer.println(izdelkiKategorija);
         writer.println("\n\n");
 
-
+    */
     }
 }

@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entitete/src/main/java/si/fri/prpo/skupina8/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storitve/src/main/java/si/fri/prpo/skupina8/Zrna/CalorieNinjasZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/Servlet/JPAServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +93,8 @@
       <workItem from="1670946997950" duration="541000" />
       <workItem from="1670947548620" duration="12895000" />
       <workItem from="1671027886475" duration="214000" />
+      <workItem from="1672048737041" duration="9865000" />
+      <workItem from="1672058988485" duration="4338000" />
     </task>
     <servers />
   </component>
