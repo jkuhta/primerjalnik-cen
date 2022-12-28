@@ -5,9 +5,9 @@ kumuluzee:
     name: dev
   datasources:
     - jndi-name: jdbc/PrimerjalnikCenDS
-      connection-url: jdbc:postgresql://172.17.0.2:5432/primerjalnikcen
-      username: postgres
-      password: postgres
+      connection-url: jdbc:postgresql://berry.db.elephantsql.com:5432/hqjhjqnw
+      username: hqjhjqnw
+      password: NhMtyWTE2NtDXjZAsVDNLAdfZvtsrVJW
       max-pool-size: 20
   dev:
     scan-libraries:
