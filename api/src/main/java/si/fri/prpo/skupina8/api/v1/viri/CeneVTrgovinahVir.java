@@ -27,7 +27,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
-@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS, PUT")
 
 @Path("cene")
 @Produces(MediaType.APPLICATION_JSON)

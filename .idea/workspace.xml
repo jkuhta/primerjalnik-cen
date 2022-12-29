@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <workItem from="1672048737041" duration="9865000" />
       <workItem from="1672058988485" duration="14566000" />
       <workItem from="1672307715298" duration="1269000" />
-      <workItem from="1672309052591" duration="5164000" />
+      <workItem from="1672309052591" duration="9144000" />
     </task>
     <servers />
   </component>

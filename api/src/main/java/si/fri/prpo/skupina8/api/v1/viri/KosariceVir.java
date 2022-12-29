@@ -34,7 +34,7 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Tag(name = "Košarice")
-@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS, PUT")
 @ApplicationScoped
 public class KosariceVir {
     @Context
