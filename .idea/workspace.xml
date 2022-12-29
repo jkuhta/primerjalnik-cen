@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5c7520fa-bc30-4d64-b16c-ae7fa655af09" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/CeneVTrgovinahVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/IzdelkiVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KategorijeVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/KosariceVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/si/fri/prpo/skupina8/api/v1/viri/TrgovineVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,27 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="si.fri.prpo.skupina8.Dtos" />
@@ -94,6 +100,8 @@
       <workItem from="1671027886475" duration="214000" />
       <workItem from="1672048737041" duration="9865000" />
       <workItem from="1672058988485" duration="14566000" />
+      <workItem from="1672307715298" duration="1269000" />
+      <workItem from="1672309052591" duration="5164000" />
     </task>
     <servers />
   </component>

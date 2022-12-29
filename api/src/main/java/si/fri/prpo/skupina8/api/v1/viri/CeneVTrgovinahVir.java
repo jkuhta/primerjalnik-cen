@@ -16,6 +16,7 @@ import si.fri.prpo.skupina8.Izdelek;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeIzdelkovZrno;
 import si.fri.prpo.skupina8.PoslovnaZrna.UpravljanjeKosariceZrno;
 import si.fri.prpo.skupina8.Zrna.CeneVTrgovinahZrno;
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -26,12 +27,14 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
 
 @Path("cene")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Tag(name = "Cene")
 @ApplicationScoped
+
 public class CeneVTrgovinahVir {
 
     @Context
